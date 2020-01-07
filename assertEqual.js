@@ -1,6 +1,6 @@
 // Dependencies
 const emojic = require("emojic")
-    , colorIt = require("color-it")
+  , colorIt = require("color-it")
     ;
   
 const assertEqual = function(actual, expected) {
@@ -8,7 +8,7 @@ const assertEqual = function(actual, expected) {
   let vSign = "";
   let vEmoji = "";
 
-  if (actual === expected){
+  if (actual === expected) {
     vResult = "  Assertion Passed";
     vSign = "=";
     vEmoji = emojic.heavyCheckMark;
@@ -19,7 +19,7 @@ const assertEqual = function(actual, expected) {
   }
   console.log(`${vEmoji}${vResult}: ${actual} ${vSign}== ${expected}`);
 
-    return null;
+  return null;
 };
 
 /* Tests
