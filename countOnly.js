@@ -1,10 +1,10 @@
 /*    implement countOnly in Lotide
 Function Behaviour
 
-countOnly will be given an array and an object. It will return an object containing counts of everything that 
+countOnly will be given an array and an object. It will return an object containing counts of everything that
 the input object listed.
 
-Our function countOnly needs to return a proper report on all the strings found in the input array, and their respective counts. 
+Our function countOnly needs to return a proper report on all the strings found in the input array, and their respective counts.
 Therefore it will need to return an object that can represent the stats.
 */
 
@@ -36,8 +36,7 @@ const countOnly = function(allItems, itemsToCount) {
   const results = {};
 
   for (const item of allItems) {
-    console.log("item: " + item, itemsToCount[item])
-    if (itemsToCount.hasOwnProperty(item) && itemsToCount[item]){
+    if (itemsToCount.hasOwnProperty(item) && itemsToCount[item]) {
 
       if (results[item]) {
         results[item] += 1;
@@ -48,7 +47,7 @@ const countOnly = function(allItems, itemsToCount) {
   }
 
   return results;
-}
+};
 
 
 const firstNames = [
