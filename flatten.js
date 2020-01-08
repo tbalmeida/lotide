@@ -66,4 +66,4 @@ assertArraysEqual(flatten(["Flames", "Oilers", "Canucks", ["Senators", "Canadien
 assertArraysEqual(flatten(["Dollar", "Peso", ["Euro", "Pound Sterling"], [1.1, 2.4]]),
   ["Dollar", "Peso", "Euro", "Pound Sterling", 1.1, 2.4]);
 
-assertArraysEqual(flatten([1, 2, [3, 4], 5, [6]]), [1, 2, 3, 4, 5]);
+assertArraysEqual(flatten([1, 2, [3, 4], 5, [6]]), [1, 2, 3, 4, 5]);  
