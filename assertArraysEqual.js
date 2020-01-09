@@ -42,7 +42,7 @@ const assertArraysEqual = function(actual, expected) {
   return null;
 };
 
-assertArraysEqual( [1, 2, 3], [1, 2, 3] );              // Pass
-assertArraysEqual( [1, 2, 3], [3, 2, 1] );              // Fail
-assertArraysEqual( ["1", "2", "3"], ["1", "2", "3"] );  // Pass
-assertArraysEqual( ["1", "2", "3"], ["1", "2", 3] );    // Shall fail, since 3 != "3" 
+// assertArraysEqual( [1, 2, 3], [1, 2, 3] );              // Pass
+// assertArraysEqual( [1, 2, 3], [3, 2, 1] );              // Fail
+// assertArraysEqual( ["1", "2", "3"], ["1", "2", "3"] );  // Pass
+// assertArraysEqual( ["1", "2", "3"], ["1", "2", 3] );    // Shall fail, since 3 != "3" 
