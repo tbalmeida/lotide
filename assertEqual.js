@@ -5,13 +5,10 @@ const assertEqual = function(actual, expected) {
 
   actual === expected ?
     console.log(emojic.heavyCheckMark + `  Assertion Passed: ${actual} === ${expected}`)
-    : console.log(emojic.x + ` Assertion Failed: ${actual} !== ${expected}`)
-
-  return null;
+    : console.log(emojic.x + ` Assertion Failed: ${actual} !== ${expected}`);
 };
 
 /* Tests
-
     Comparing identical strings
     Comparing non-identical strings
     Comparing identical numbers

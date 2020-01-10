@@ -12,22 +12,10 @@ Therefore it will need to return an object that can represent the stats.
 const emojic = require("emojic");
 
 const assertEqual = function(actual, expected) {
-  let vResult = "";
-  let vSign = "";
-  let vEmoji = "";
 
-  if (actual === expected) {
-    vResult = "  Assertion Passed";
-    vSign = "=";
-    vEmoji = emojic.heavyCheckMark;
-  } else {
-    vResult = " Assertion Failed";
-    vSign = "!";
-    vEmoji = emojic.x;
-  }
-  console.log(`${vEmoji}${vResult}: ${actual} ${vSign}== ${expected}`);
-
-  return null;
+  actual === expected ?
+    console.log(emojic.heavyCheckMark + `  Assertion Passed: ${actual} === ${expected}`)
+    : console.log(emojic.x + ` Assertion Failed: ${actual} !== ${expected}`);
 };
 
 // allItems: an array of strings that we need to look through
@@ -37,15 +25,9 @@ const countOnly = function(allItems, itemsToCount) {
 
   for (const item of allItems) {
     if (itemsToCount.hasOwnProperty(item) && itemsToCount[item]) {
-
-      if (results[item]) {
-        results[item] += 1;
-      } else {
-        results[item] = 1;
-      }
+      results[item] ? results[item] += 1 : results[item] = 1;
     }
   }
-
   return results;
 };
 

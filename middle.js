@@ -19,13 +19,11 @@ For arrays with an even number of elements, an array containing the two elements
   middle([1, 2, 3, 4, 5, 6]) // => [3, 4]
 */
 
-const emojic = require("emojic")
-  , colorIt = require("color-it")
-    ;
+const emojic = require("emojic");
 
-const eqArrays = function( arrA, arrB ){
+const eqArrays = function(arrA, arrB) {
 
-  if (arrA.length !== arrB.length ){
+  if (arrA.length !== arrB.length) {
     // different sizes, returns false and exits function
     return false;
 
@@ -39,45 +37,31 @@ const eqArrays = function( arrA, arrB ){
   }
 
   return true;
-}
-
-const assertArraysEqual = function(actual, expected) {
-  let vResult = "";
-  let vSign = "";
-  let vEmoji = "";
-
-  if ( eqArrays( actual, expected ) ) {
-    vResult = "  Assertion Passed";
-    vSign = "=";
-    vEmoji = emojic.heavyCheckMark;
-  } else {
-    vResult = " Assertion Failed";
-    vSign = "!";
-    vEmoji = emojic.x;
-  }
-  console.log(`${vEmoji}${vResult}: ${actual} ${vSign}== ${expected}`);
-
-  return null;
 };
 
-const middle = function ( array ){
+const assertArraysEqual = function(actual, expected) {
+  eqArrays(actual, expected) ?
+    console.log(emojic.heavyCheckMark + `  Assertion Passed: ${actual} === ${expected}`)
+    : console.log(emojic.x + ` Assertion Failed: ${actual} !== ${expected}`);
+};
+
+const middle = function(array) {
   let aRet = [];
   let vSize = array.length;
 
-  if ( vSize > 2 ){
-    if ( vSize % 2 === 0 ) {
-      aRet.push( array[ vSize/2-1 ], array[ vSize/2 ] )
+  if (vSize > 2) {
+    if (vSize % 2 === 0) {
+      aRet.push(array[ vSize / 2 - 1 ], array[ vSize / 2 ]);
     } else {
-      aRet.push( array[ Math.floor(vSize/2) ] );
+      aRet.push(array[ Math.floor(vSize / 2) ]);
     }
-  }
+  } console.log(aRet);
   return aRet;
-}
+};
 
-assertArraysEqual( middle([1]), [] );
-assertArraysEqual( middle([1]), [] );
-assertArraysEqual( middle([1, 2]), [] );
-assertArraysEqual( middle([1, 2, 3]), [2] );
-assertArraysEqual( middle([1, 2, 3, 4, 5]), [3] );
-assertArraysEqual( middle([1, 2, 3, 4]), [2, 3] );
-assertArraysEqual( middle([1, 2, 3, 4, 5, 6]), [3, 4] );
+assertArraysEqual(middle([1]), []);
+assertArraysEqual(middle([1, 2]), []);
+assertArraysEqual(middle([1, 2, 3]), [2]);
+assertArraysEqual(middle([1, 2, 3, 4, 5]), [3]);
+assertArraysEqual(middle([1, 2, 3, 4]), [2, 3]);
+assertArraysEqual(middle([1, 2, 3, 4, 5, 6]), [3, 4]);

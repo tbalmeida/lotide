@@ -22,9 +22,7 @@ console.log(results2);
 
 // The following function originally resides on assertEquals.js
 // Dependencies
-const emojic = require("emojic")
-  , colorIt = require("color-it")
-    ;
+const emojic = require("emojic");
 
 //function to compare two arrays. The order of the elements matter.
 const eqArrays = function(arrA, arrB) {
@@ -46,22 +44,9 @@ const eqArrays = function(arrA, arrB) {
 };
 
 const assertArraysEqual = function(actual, expected) {
-  let vResult = "";
-  let vSign = "";
-  let vEmoji = "";
-
-  if (eqArrays(actual, expected)) {
-    vResult = "  Assertion Passed";
-    vSign = "=";
-    vEmoji = emojic.heavyCheckMark;
-  } else {
-    vResult = " Assertion Failed";
-    vSign = "!";
-    vEmoji = emojic.x;
-  }
-  console.log(`${vEmoji}${vResult}: ${actual} ${vSign}== ${expected}`);
-
-  return "";
+  eqArrays(actual, expected) ?
+    console.log(emojic.heavyCheckMark + `  Assertion Passed: ${actual} === ${expected}`)
+    : console.log(emojic.x + ` Assertion Failed: ${actual} !== ${expected}`);
 };
 
 const takeUntil = function(array, callback) {

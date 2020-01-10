@@ -6,9 +6,9 @@ For each letter, instead of returning just one number to represent its number of
 */
 const emojic = require("emojic");
 
-const eqArrays = function( arrA, arrB ){
+const eqArrays = function(arrA, arrB) {
 
-  if (arrA.length !== arrB.length ){
+  if (arrA.length !== arrB.length) {
     // different sizes, returns false and exits function
     return false;
 
@@ -22,14 +22,14 @@ const eqArrays = function( arrA, arrB ){
   }
 
   return true;
-}
+};
 
 const assertArraysEqual = function(actual, expected) {
   let vResult = "";
   let vSign = "";
   let vEmoji = "";
 
-  if ( eqArrays( actual, expected ) ) {
+  if (eqArrays(actual, expected)) {
     vResult = "  Assertion Passed";
     vSign = "=";
     vEmoji = emojic.heavyCheckMark;
@@ -51,8 +51,8 @@ const letterPositions = function(pText) {
   const oRet = {};
 
   for (let i = 0; i < vTmp.length; i ++) {
-    if (oRet.hasOwnProperty(vTmp[i]) ) {
-      oRet[vTmp[i]].push( i );
+    if (oRet.hasOwnProperty(vTmp[i])) {
+      oRet[vTmp[i]].push(i);
     } else {
       oRet[vTmp[i]] = [ i ];
     }

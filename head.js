@@ -1,24 +1,11 @@
 // Dependencies
-const emojic = require("emojic")
-    ;
+const emojic = require("emojic");
+
 // Code
 const assertEqual = function(actual, expected) {
-  let vResult = "";
-  let vSign = "";
-  let vEmoji = "";
-
-  if (actual === expected) {
-    vResult = "  Assertion Passed";
-    vSign = "=";
-    vEmoji = emojic.heavyCheckMark;
-  } else {
-    vResult = " Assertion Failed";
-    vSign = "!";
-    vEmoji = emojic.x;
-  }
-  console.log(`${vEmoji}${vResult}: ${actual} ${vSign}== ${expected}`);
-
-  return null;
+  actual === expected ?
+    console.log(emojic.heavyCheckMark + `  Assertion Passed: ${actual} === ${expected}`)
+    : console.log(emojic.x + ` Assertion Failed: ${actual} !== ${expected}`);
 };
 
 const head = function(pArray) {

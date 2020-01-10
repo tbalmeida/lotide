@@ -30,6 +30,7 @@ const assertEqual = function(actual, expected) {
 };
 
 const eqObjects = function(object1, object2) {
+  
   if (Object.keys(object1).length === Object.keys(object2).length) {
     // objects have the same # of properties ,so check properties/values
     

@@ -30,22 +30,9 @@ const eqArrays = function(arrA, arrB) {
 };
 
 const assertArraysEqual = function(actual, expected) {
-  let vResult = "";
-  let vSign = "";
-  let vEmoji = "";
-
-  if (eqArrays(actual, expected)) {
-    vResult = "  Assertion Passed";
-    vSign = "=";
-    vEmoji = emojic.heavyCheckMark;
-  } else {
-    vResult = " Assertion Failed";
-    vSign = "!";
-    vEmoji = emojic.x;
-  }
-  console.log(`${vEmoji}${vResult}: ${actual} ${vSign}== ${expected}`);
-
-  return null;
+  eqArrays(actual, expected) ?
+    console.log(emojic.heavyCheckMark + `  Assertion Passed: ${actual} === ${expected}`)
+    : console.log(emojic.x + ` Assertion Failed: ${actual} !== ${expected}`);
 };
 
 const without = function(array, exclude) {
@@ -57,11 +44,8 @@ const without = function(array, exclude) {
     for (let j = 0; j < exclude.length; j++) {
       array[i] === exclude[j] ? bAdd = false : null;
     }
-    if (bAdd) {
-      aRet.push(array[i]);
-    }
+    bAdd ? aRet.push(array[i]) : null;
   }
-
   return aRet;
 };
 

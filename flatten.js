@@ -24,22 +24,9 @@ const eqArrays = function(arrA, arrB) {
 };
 
 const assertArraysEqual = function(actual, expected) {
-  let vResult = "";
-  let vSign = "";
-  let vEmoji = "";
-
-  if (eqArrays(actual, expected)) {
-    vResult = "  Assertion Passed";
-    vSign = "=";
-    vEmoji = emojic.heavyCheckMark;
-  } else {
-    vResult = " Assertion Failed";
-    vSign = "!";
-    vEmoji = emojic.x;
-  }
-  console.log(`${vEmoji}${vResult}: ${actual} ${vSign}== ${expected}`);
-
-  return null;
+  eqArrays(actual, expected) ?
+    console.log(emojic.heavyCheckMark + `  Assertion Passed: ${actual} === ${expected}`)
+    : console.log(emojic.x + ` Assertion Failed: ${actual} !== ${expected}`);
 };
 
 const flatten = function(pArray) {
@@ -66,4 +53,4 @@ assertArraysEqual(flatten(["Flames", "Oilers", "Canucks", ["Senators", "Canadien
 assertArraysEqual(flatten(["Dollar", "Peso", ["Euro", "Pound Sterling"], [1.1, 2.4]]),
   ["Dollar", "Peso", "Euro", "Pound Sterling", 1.1, 2.4]);
 
-assertArraysEqual(flatten([1, 2, [3, 4], 5, [6]]), [1, 2, 3, 4, 5]);  
+assertArraysEqual(flatten([1, 2, [3, 4], 5, [6]]), [1, 2, 3, 4, 5]);
