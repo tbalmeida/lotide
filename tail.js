@@ -1,13 +1,8 @@
 // Dependencies
 const emojic = require("emojic");
+const assertEqual = require("./assertEqual");
 
 // Code
-const assertEqual = function(actual, expected) {
-  actual === expected ?
-    console.log(emojic.heavyCheckMark + `  Assertion Passed: ${actual} === ${expected}`)
-    : console.log(emojic.x + ` Assertion Failed: ${actual} !== ${expected}`);
-};
-
 const tail = (pArg) => {
   let aRet = pArg.slice(1);
   return aRet;

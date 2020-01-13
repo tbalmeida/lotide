@@ -2,14 +2,8 @@
 // Dependencies
 
 const emojic = require("emojic");
+const assertEqual = require("./assertEqual");
   
-const assertEqual = function(actual, expected) {
-
-  actual === expected ?
-    console.log(emojic.heavyCheckMark + `  Assertion Passed: ${actual} === ${expected}`)
-    : console.log(emojic.x + ` Assertion Failed: ${actual} !== ${expected}`);
-};
-
 //function to compare two arrays. The order of the elements matter.
 const eqArrays = function(arrA, arrB) {
 
@@ -33,3 +27,5 @@ assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true);
 assertEqual(eqArrays([1, 2, 3], [3, 2, 1]), false);
 assertEqual(eqArrays(["1", "2", "3"], ["1", "2", "3"]), true);
 assertEqual(eqArrays(["1", "2", ], ["1", "2", 3]), false);
+
+module.exports = eqArrays;

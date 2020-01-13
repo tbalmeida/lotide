@@ -6,14 +6,8 @@
 
 // Dependencies
 const emojic = require("emojic");
+const assertEqual = require("./assertEqual");
   
-const assertEqual = function(actual, expected) {
-
-  actual === expected ?
-    console.log(emojic.heavyCheckMark + `  Assertion Passed: ${actual} === ${expected}`)
-    : console.log(emojic.x + ` Assertion Failed: ${actual} !== ${expected}`);
-};
-
 const findKey = function(pObj, pCallback) {
   let vRet;
   for (const key in pObj) {

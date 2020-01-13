@@ -4,30 +4,7 @@ Our function will for now only handle one level of nesting.
 */
 
 const emojic = require("emojic");
-
-const eqArrays = function(arrA, arrB) {
-
-  if (arrA.length !== arrB.length) {
-    // different sizes, returns false and exits function
-    return false;
-
-  } else {
-    for (let i = 0; i < arrA.length; i++) {
-      if (arrA[i] !== arrB[i]) {
-        // found a difference; returns false and exits function
-        return false;
-      }
-    }
-  }
-
-  return true;
-};
-
-const assertArraysEqual = function(actual, expected) {
-  eqArrays(actual, expected) ?
-    console.log(emojic.heavyCheckMark + `  Assertion Passed: ${actual} === ${expected}`)
-    : console.log(emojic.x + ` Assertion Failed: ${actual} !== ${expected}`);
-};
+const assertArraysEqual = require("./assertArraysEqual");
 
 const flatten = function(pArray) {
   let aRet = [];
