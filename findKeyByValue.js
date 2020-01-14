@@ -8,14 +8,7 @@ Use assertEqual to write test cases for various scenarios.
 // Dependencies
 const emojic = require("emojic");
   
-const assertEqual = function(actual, expected) {
-
-  actual === expected ?
-    console.log(emojic.heavyCheckMark + `  Assertion Passed: ${actual} === ${expected}`)
-    : console.log(emojic.x + ` Assertion Failed: ${actual} !== ${expected}`);
-
-  return null;
-};
+const assertEqual = require("./assertEqual");
 
 const findKeyByValue = function(pObj, pValue) {
   let vRet;
@@ -33,9 +26,10 @@ const bestTVShowsByGenre = {
   action: "The Mandalorian"
 };
 
+module.exports = findKeyByValue;
 
-assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama");
+/* assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama");
 assertEqual(findKeyByValue(bestTVShowsByGenre, "That '70s Show"), undefined);
 assertEqual(findKeyByValue(bestTVShowsByGenre, "Helix"), undefined);
 assertEqual(findKeyByValue(bestTVShowsByGenre, "Brooklyn Nine-Nine"), "comedy");
-assertEqual(findKeyByValue(bestTVShowsByGenre, "The Expanse"), "sci_fi");
+assertEqual(findKeyByValue(bestTVShowsByGenre, "The Expanse"), "sci_fi"); */

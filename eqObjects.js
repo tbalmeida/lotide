@@ -9,25 +9,8 @@ based on a perfect match.
 
 // Dependencies
 const emojic = require("emojic");
-  
-const assertEqual = function(actual, expected) {
-  let vResult = "";
-  let vSign = "";
-  let vEmoji = "";
-
-  if (actual === expected) {
-    vResult = "  Assertion Passed";
-    vSign = "=";
-    vEmoji = emojic.heavyCheckMark;
-  } else {
-    vResult = " Assertion Failed";
-    vSign = "!";
-    vEmoji = emojic.x;
-  }
-  console.log(`${vEmoji}${vResult}: ${actual} ${vSign}== ${expected}`);
-
-  return null;
-};
+const assertEqual = require('./assertEqual');
+const eqArrays = require("./eqArrays");
 
 const eqObjects = function(object1, object2) {
   
@@ -53,34 +36,20 @@ const eqObjects = function(object1, object2) {
 };
 
 //function to compare two arrays. The order of the elements matter.
-const eqArrays = function(arrA, arrB) {
 
-  if (arrA.length !== arrB.length) {
-    // different sizes, returns false and exits function
-    return false;
+module.exports = eqObjects;
 
-  } else {
-    for (let i = 0; i < arrA.length; i++) {
-      if (arrA[i] !== arrB[i]) {
-        // found a difference; returns false and exits function
-        return false;
-      }
-    }
-  }
-
-  return true;
-};
-console.log("\nStep 2");
+// console.log("\nStep 2");
 // step 2
-const ab = { a: "1", b: "2" };
-const ba = { b: "2", a: "1" };
+// const ab = { a: "1", b: "2" };
+// const ba = { b: "2", a: "1" };
 //eqObjects(ab, ba); // => true
 
-const abc = { a: "1", b: "2", c: "3" };
+// const abc = { a: "1", b: "2", c: "3" };
 //eqObjects(ab, abc); // => false
 
-assertEqual(eqObjects(ab, ba), true);
-assertEqual(eqObjects(ab, abc), false);
+// assertEqual(eqObjects(ab, ba), true);
+// assertEqual(eqObjects(ab, abc), false);
 
 // personal test
 // const dc = { a: "1", b: "2" };
@@ -88,14 +57,14 @@ assertEqual(eqObjects(ab, abc), false);
 // assertEqual(eqObjects(dc, dd), false );
 
 
-console.log("\nStep 3");
-// step 3
-const cd = { c: "1", d: ["2", 3] };
-const dc = { d: ["2", 3], c: "1" };
-eqObjects(cd, dc); // => true
+// console.log("\nStep 3");
+// // step 3
+// const cd = { c: "1", d: ["2", 3] };
+// const dc = { d: ["2", 3], c: "1" };
+// eqObjects(cd, dc); // => true
 
-const cd2 = { c: "1", d: ["2", 3, 4] };
-eqObjects(cd, cd2); // => false
+// const cd2 = { c: "1", d: ["2", 3, 4] };
+// eqObjects(cd, cd2); // => false
 
-assertEqual(eqObjects(cd, dc), true);
-assertEqual(eqObjects(cd, cd2), false);
+// assertEqual(eqObjects(cd, dc), true);
+// assertEqual(eqObjects(cd, cd2), false);

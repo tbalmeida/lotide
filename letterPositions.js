@@ -5,43 +5,8 @@ For each letter, instead of returning just one number to represent its number of
 
 */
 const emojic = require("emojic");
-
-const eqArrays = function(arrA, arrB) {
-
-  if (arrA.length !== arrB.length) {
-    // different sizes, returns false and exits function
-    return false;
-
-  } else {
-    for (let i = 0; i < arrA.length; i++) {
-      if (arrA[i] !== arrB[i]) {
-        // found a difference; returns false and exits function
-        return false;
-      }
-    }
-  }
-
-  return true;
-};
-
-const assertArraysEqual = function(actual, expected) {
-  let vResult = "";
-  let vSign = "";
-  let vEmoji = "";
-
-  if (eqArrays(actual, expected)) {
-    vResult = "  Assertion Passed";
-    vSign = "=";
-    vEmoji = emojic.heavyCheckMark;
-  } else {
-    vResult = " Assertion Failed";
-    vSign = "!";
-    vEmoji = emojic.x;
-  }
-  console.log(`${vEmoji}${vResult}: ${actual} ${vSign}== ${expected}`);
-
-  return null;
-};
+const eqArrays = require("./eqArrays");
+const assertArraysEqual = require("./assertArraysEqual");
 
 const letterPositions = function(pText) {
   // flattens the string and takes out spaces
@@ -61,5 +26,7 @@ const letterPositions = function(pText) {
   return oRet;
 };
 
-assertArraysEqual(letterPositions("hello").e, [1]);
-assertArraysEqual(letterPositions("racecar").a, [1, 5]);
+module.exports = letterPositions;
+
+// assertArraysEqual(letterPositions("hello").e, [1]);
+// assertArraysEqual(letterPositions("racecar").a, [1, 5]);

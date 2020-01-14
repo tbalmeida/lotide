@@ -27,8 +27,8 @@ const without = function(array, exclude) {
   return aRet;
 };
 
-assertArraysEqual(without([1, 2, 3], [1]), [2, 3]);
-assertArraysEqual(without(["1", "2", "3"], [1, 2, "3"]), ["1", "2"]);
-assertArraysEqual(without([1, 2, 3, 6], [2, 3]), [1, 6]);
-assertArraysEqual(without([1, 2, 3, "4", "7"], [1, "7"]), [2, 3, "4"]);
-assertArraysEqual(without(["Canada", "Cuba", "USA", "Mexico", "Belize"], ["Cuba", "Belize"]), ["Canada", "USA", "Mexico"]);
+// assertArraysEqual(without([1, 2, 3], [1]), [2, 3]);
+// assertArraysEqual(without(["1", "2", "3"], [1, 2, "3"]), ["1", "2"]);
+// assertArraysEqual(without([1, 2, 3, 6], [2, 3]), [1, 6]);
+// assertArraysEqual(without([1, 2, 3, "4", "7"], [1, "7"]), [2, 3, "4"]);
+// assertArraysEqual(without(["Canada", "Cuba", "USA", "Mexico", "Belize"], ["Cuba", "Belize"]), ["Canada", "USA", "Mexico"]);

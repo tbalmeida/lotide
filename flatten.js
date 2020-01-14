@@ -23,11 +23,13 @@ const flatten = function(pArray) {
   return aRet;
 };
 
-assertArraysEqual(flatten([1, 2, [3, 4], 5, [6]]), [1, 2, 3, 4, 5, 6]);
+module.exports = flatten;
+
+/* assertArraysEqual(flatten([1, 2, [3, 4], 5, [6]]), [1, 2, 3, 4, 5, 6]);
 assertArraysEqual(flatten([1, 2, [3], 4, 5, [6]]), [1, 2, 3, 4, 5, 6]);
 assertArraysEqual(flatten(["Flames", "Oilers", "Canucks", ["Senators", "Canadiens"], ["Jets"]]),
   ["Flames", "Oilers", "Canucks", "Senators", "Canadiens", "Jets"]);
 assertArraysEqual(flatten(["Dollar", "Peso", ["Euro", "Pound Sterling"], [1.1, 2.4]]),
   ["Dollar", "Peso", "Euro", "Pound Sterling", 1.1, 2.4]);
 
-assertArraysEqual(flatten([1, 2, [3, 4], 5, [6]]), [1, 2, 3, 4, 5]);
+assertArraysEqual(flatten([1, 2, [3, 4], 5, [6]]), [1, 2, 3, 4, 5]); */

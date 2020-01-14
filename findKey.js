@@ -18,6 +18,8 @@ const findKey = function(pObj, pCallback) {
   return vRet;
 };
 
+module.exports = findKey;
+/* 
 assertEqual(
   findKey({
     "Blue Hill": { stars: 1 },
@@ -29,7 +31,6 @@ assertEqual(
   }, x => x.stars === 2)
   , "noma");    // true
 
-
 assertEqual(
   findKey({
     "Heineken":   { country: "Netherlands" },
@@ -38,4 +39,4 @@ assertEqual(
     "Newcastle":  { country: "UK" },
     "Guinnes":    { country: "Ireland" }
   }, x => x.country === "UK")
-  , "Newcastle");    // true
+  , "Newcastle");    // true */
