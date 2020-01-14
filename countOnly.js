@@ -11,12 +11,7 @@ Therefore it will need to return an object that can represent the stats.
 // Dependencies
 const emojic = require("emojic");
 
-const assertEqual = function(actual, expected) {
-
-  actual === expected ?
-    console.log(emojic.heavyCheckMark + `  Assertion Passed: ${actual} === ${expected}`)
-    : console.log(emojic.x + ` Assertion Failed: ${actual} !== ${expected}`);
-};
+const assertEqual = require('./assertEqual');
 
 // allItems: an array of strings that we need to look through
 // itemsToCount: an object specifying what to count
@@ -31,6 +26,7 @@ const countOnly = function(allItems, itemsToCount) {
   return results;
 };
 
+module.exports = countOnly;
 
 const firstNames = [
   "Karl",

@@ -19,5 +19,7 @@ const countLetters = function(pText) {
   return oRet;
 };
 
+module.exports = countLetters;
+
 // console.log("lhl", countLetters("lhl"));
 // console.log("lighthouse in the house", countLetters("lighthouse in the house"));

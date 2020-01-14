@@ -27,6 +27,8 @@ const without = function(array, exclude) {
   return aRet;
 };
 
+module.exports = without;
+
 // assertArraysEqual(without([1, 2, 3], [1]), [2, 3]);
 // assertArraysEqual(without(["1", "2", "3"], [1, 2, "3"]), ["1", "2"]);
 // assertArraysEqual(without([1, 2, 3, 6], [2, 3]), [1, 6]);
