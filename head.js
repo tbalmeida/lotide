@@ -1,8 +1,5 @@
 // Dependencies
-const emojic = require("emojic");
-const assertEqual = require("./assertEqual");
-
-// Code
+// const emojic = require("emojic");
 
 const head = function(pArray) {
   return pArray[0];
