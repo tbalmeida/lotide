@@ -56,7 +56,7 @@ const eqObjects = function(object1, object2) {
   }
   return true;
 };
-
+/* 
 //function to compare two arrays. The order of the elements matter.
 const ab = { a: "1", b: "2" };
 const ba = { b: "2", a: "1" };
@@ -75,4 +75,4 @@ const cd2 = { c: "1", d: ["2", 3, 4] };
 assertObjectsEqual(cd, cd2); // => false
 
 assertObjectsEqual(cd, dc);    // true
-assertObjectsEqual(cd, cd2);  // false
+assertObjectsEqual(cd, cd2);  // false */
